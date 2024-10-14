@@ -4,6 +4,9 @@ import { Nunito, Nunito_Sans} from 'next/font/google'
 import clsx from "clsx";
 import { createClient } from "@/prismicio";
 
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
 const nunito = Nunito({
   subsets: ['latin'],
   variable: '--font-nunito',
@@ -19,17 +22,16 @@ const nunitoSans = Nunito({
 export async function generateMetadata(): Promise<Metadata> {
  const client = createClient()
 
- const page = await client.getSingle("settings")
+ const settings = await client.getSingle("settings")
 
   return {
-    title: page.data.site_title || "Flowrise",
-    description: page.data.meta_description || "Flowrise is the relaxing app for you.",
+    title: settings.data.site_title || "Flowrise",
+    description: settings.data.meta_description || "Flowrise is the relaxing app for you.",
     openGraph: {
-      images: [page.data.og_image.url || ""],
+      images: [settings.data.og_image.url || ""],
     },
   }
 }
-
 
 // export const metadata: Metadata = {
 //   title: "Create Next App",
@@ -44,9 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
       <body>
-        <header>HEADER!</header>
+        <Header />
         {children}
-        <footer>FOOTER!</footer>
+        <Footer />
       </body>
     </html>
   );
