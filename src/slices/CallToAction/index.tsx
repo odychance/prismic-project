@@ -1,6 +1,5 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, JSXMapSerializer, PrismicRichText } from "@prismicio/react";
-// import { PrismicNextLink } from "@prismicio/next";
 import Bounded from "@/components/Bounded";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
