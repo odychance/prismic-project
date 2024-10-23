@@ -1,14 +1,10 @@
 import clsx from "clsx"
 import { PrismicNextLink, PrismicNextLinkProps } from "@prismicio/next"
-import { AnchorHTMLAttributes } from "react";
-
-type ButtonProps = PrismicNextLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>;
-
 
 export default function Button({
     className,
     ...restProps
-}: ButtonProps) {
+}: PrismicNextLinkProps) {
 
     return (
         <PrismicNextLink 
