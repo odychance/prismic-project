@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Nunito, Nunito_Sans} from 'next/font/google'
+import { Nunito } from 'next/font/google'
 import clsx from "clsx";
 import { createClient, repositoryName } from "@/prismicio";
 import { PrismicPreview } from "@prismicio/next";
