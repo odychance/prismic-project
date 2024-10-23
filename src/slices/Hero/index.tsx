@@ -49,7 +49,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <PrismicRichText field={slice.primary.body} components={components}/>
             
             <Button
-              field={slice.primary.button_link} className="mb-8 md:mb-10">
+              field={slice.primary.button_link}
+              className="mb-8 md:mb-10">
               {slice.primary.button_text}
             </Button>
 
